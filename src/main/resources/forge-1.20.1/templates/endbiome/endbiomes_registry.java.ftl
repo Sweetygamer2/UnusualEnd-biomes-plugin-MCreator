@@ -23,8 +23,10 @@ public class ${JavaModName}EndBiomes {
             </#if>
 
             <#if biome.generationType == "Highlands" && biome.midlands != "Vanilla">
+                double mid = 0;
+                mid = ${biome.weight} / 4;
                 TheEndBiomes.addMidlandsBiome(ResourceKey.create(Registries.BIOME, new ResourceLocation("${modid}:${w.getWorkspace().getModElementByName(biome.biome).getRegistryName()}")),
-                    ResourceKey.create(Registries.BIOME, new ResourceLocation("${modid}:${w.getWorkspace().getModElementByName(biome.midlands).getRegistryName()}")), ${biome.weight}d);
+                    ResourceKey.create(Registries.BIOME, new ResourceLocation("${modid}:${w.getWorkspace().getModElementByName(biome.midlands).getRegistryName()}")), mid);
             </#if>
 
             <#if biome.generationType == "Highlands" && biome.barrens != "Vanilla">
