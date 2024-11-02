@@ -2,7 +2,7 @@ package ${package}.mixins;
 
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-@Mixin(BiomeSource.class)
+@Mixin(value = BiomeSource.class, priority = 800)
 public abstract class BiomeSourceMixin {
 
 	@Redirect(method = "possibleBiomes", at = @At(value = "INVOKE", target = "Ljava/util/function/Supplier;get()Ljava/lang/Object;"))
